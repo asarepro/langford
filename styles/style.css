@@ -1,0 +1,659 @@
+:root{
+    --primary-color:#420001;
+    --secondary-color:#B67E7D;
+    --acent-color:#640000;
+    --main:#123244;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.darks{
+    background-color: var(--main);
+    color: white;
+}
+
+body{
+    font-size: 100%;
+    background-color: rgb(214, 255, 255);
+}
+
+header{
+    background-color: var(--main);
+    padding: .3rem;
+}
+
+.main_header {
+    display: grid;
+    grid-template-columns: .2fr .5fr .3fr .2fr;
+    justify-content: center;
+}
+
+.logo{
+    width: 50%;
+    color: white;
+    align-self: center;
+    border-radius: 70%;
+}
+
+.company_title{
+    align-self: center;
+    font-size: 1rem;
+    color: white;
+}
+
+.main_header .dark_toggle{
+    width: 100%;
+    display: inline-flex;
+    font-size: 1rem;
+    align-self: center;
+    border: none;
+}
+
+.dark_toggle::before{
+    content: '🌙';
+    border: none;
+}
+
+.dark_toggle,.sun:hover{
+    cursor: pointer;
+}
+
+
+.sun::before{
+    content: '☀️';
+}
+
+.nav_btn::before{
+    content: '\2630';
+    color: white;
+}
+
+.nav_btn_close::before{
+    content: '\00D7';
+    color: white;
+}
+
+.nav_btn,.nav_btn_close{
+    background-color: transparent;
+    font-size: 1.5rem;
+    width: 100%;
+    display: inline;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav_btn:hover{
+    cursor: pointer;
+}
+
+.main_header{
+    position: relative;
+}
+
+.menu_list{
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 72%;
+    background-color: var(--main);
+    padding: 20px;
+    border-radius: 5px;
+    border: .1rem solid black;
+    z-index: 1;
+    scale: 0;
+}
+
+.menu_open{
+    animation-name: anime;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anime{
+    from{
+        scale: 0;
+        opacity: 0;
+    }
+
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+
+.menu_list li{
+    padding: .5rem;
+    list-style: none;
+    text-align: center;
+}
+
+.menu_list li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.menu_list li a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: .4rem;
+    background-color: transparent;
+    margin: auto;
+    transition: .5s ease-in;
+    padding-top: .1rem;
+}
+
+.menu_list li a:hover::after{
+    width: 90%;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid black; */
+    margin-bottom: 10rem;
+}
+
+.hero h1{
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 36%;
+    font-size: 1.5rem;
+    transform: translate(-50%,-50%);
+}
+
+.hero img{
+    width: 100%;
+    height: auto;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background-color: var(--secondary-color);
+    padding: 3rem;
+}
+
+h2{
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.vd-pd{
+    width: 100%;
+    height: 100%;
+}
+
+.vd-pd img{
+    width: 100%;
+    height: 100%;
+}
+
+.pic-pd{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    width: 100%;
+    height:  100%;
+}
+
+.pic-pd .pics{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.pics img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.pd-link{
+    display: block;
+    margin: 3rem auto;
+    width: 35%;
+    text-align: center;
+    font-size: .7rem;
+    color: white;
+    margin-bottom: 10rem;
+    padding: 1rem 0;
+    border-radius: 15px;
+    background-color: var(--main);
+    transition: .6s ease-in-out;
+    text-decoration: none;
+}
+
+.pd-link:hover{
+    background-color: white;
+    color: var(--main);
+}
+
+
+/* ==================cloths============ */
+.cloths{
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 2rem;
+    background-color: var(--acent-color);
+    width: 100%;
+    height: 280px;
+}
+
+
+.item1{
+    min-width: 150px;
+    height: 200px;
+    /* flex-shrink: 0; */
+    border: 1px solid black;
+}
+
+.item1 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.anime-head h2{
+    margin-bottom: 3rem;
+}
+
+.pic-anime{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    padding: 1.2rem;
+    margin-top: 5rem;
+}
+
+.pic-anime .anime1{
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: auto;
+    transition: .7s ease-in-out;
+    scale: 1;
+}
+
+.pic-anime .anime1:hover{
+    scale: 1.1;
+    z-index: 1;
+    transition: .7s ease-in-out;
+}
+
+.pic-anime .anime2:hover {
+    scale: 1.1;
+    z-index: 1;
+    transition: .7s ease-in-out;
+    transform:translateX(30deg)
+}
+
+.pic-anime .anime3:hover {
+    scale: 1.1;
+    z-index: 1;
+    transition: .7s ease-in-out;
+}
+
+.pic-anime .anime1 img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pic-anime .anime2 {
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
+    transition: .7s ease-in-out;
+    scale: 1;
+}
+
+.pic-anime .anime2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pic-anime .anime3 {
+    position: absolute;
+    top: 54%;
+    left: 35%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    transition: .7s ease-in-out;
+    scale: 1;
+}
+
+
+.pic-anime .anime3 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.abt-h2{
+    margin: 7rem 0 4rem 0;
+}
+
+.abt-us{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    gap: 5rem;
+    margin-bottom: 7rem;
+}
+
+.abt{
+    position: relative;
+}
+
+.abt .overlay{
+    align-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 50, 68,0.7);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    scale: 0;
+    transition: .7s ease-in;
+}
+
+.abt .overlay2 {
+    align-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 50, 68, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    scale: 0;
+    transition: .7s ease-in;
+}
+
+.abt .overlay3 {
+    align-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 50, 68, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    scale: 0;
+    transition: .7s ease-in;
+}
+
+.abt:hover .overlay {
+    scale: 1;
+}
+
+.abt:hover .overlay2{
+    scale: 1;
+}
+
+.abt:hover .overlay3 {
+    scale: 1;
+}
+
+.abt-us .abt figure{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+.abt figure img{
+    width: 100%;
+    height: 100%;
+    /* border-top-right-radius: 7px; */
+    border-radius: 10px;
+    /* object-fit: cover; */
+}
+
+figcaption{
+    text-align: center;
+    background-color: var(--main);
+    color: white;
+    padding: .8rem;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* ======================LEARN========== */
+h3{
+    text-align: center;
+    font-size: 3rem;
+}
+.learn{
+    display: grid;
+    grid-template-areas:
+    "html css_js"
+    "html css_js"
+    "python python"
+    ;
+    padding: 30px;
+    gap: 1rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+.html{
+    grid-area: html;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.css_js{
+    grid-area: css_js;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.python{
+    grid-area: python;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(199, 47, 47);
+    text-align: center;
+    padding: 10px;
+    grid-column: 1/3;
+    /* background-color: #420001; */
+}
+
+
+/* ===============media */
+
+footer{
+    background-color: var(--main);
+}
+
+footer > p{
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 0;
+}
+
+.media{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content:center;
+    gap: 10px;
+    padding: 30px;
+    width: 50%;
+}
+
+.media > a{
+    display: block;
+    width: 30%;
+}
+
+.media > img{
+    width: 40px;
+    height: auto;
+}
+
+@media screen and (min-width:600px){
+    header{
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+    }
+
+    .main_header {
+        display: grid;
+        grid-template-columns: .5fr .7fr .3fr 0fr;
+        align-content: center;
+        font-size: 1rem;
+        justify-content: space-between;
+    }
+
+    .menu_open{
+        animation-name: none;
+    }
+
+    .menu_list{
+        display: flex;
+        position: relative;
+        scale: 1;
+        z-index: 0;
+        top: none;
+        left: none;
+        height: auto;
+        width: 100%;
+        justify-content: space-evenly;
+        transform: translate(none);
+        background-color: transparent;
+        border: none;
+        border-radius: 0px;
+    }
+
+    .nav_btn{
+        display: none;
+    }
+
+    p{
+        font-size: 2rem;
+    }
+
+    .main_header .dark_toggle{
+        font-size: 1.4rem;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .hero h1{
+        font-size: 3rem;
+        top: 40%;
+        left: 40%;
+    }
+
+    .products{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pd-link{
+        width: 15%;
+        font-size: 1.1rem;
+    }
+
+    .cloths{
+        height: 300px;
+    }
+
+    .item1{
+        min-width: 200px;
+    }
+
+    .anime-head h2{
+        margin-top: 7rem;
+    }
+
+    .pic-anime{
+        margin-top: 7rem;
+    }
+
+    .pic-anime .anime1 {
+        top: 40%;
+        width: 39%;
+    }
+
+    .pic-anime .anime2{
+        top: 70%;
+        width: 39%;
+    }
+
+    .pic-anime .anime3{
+        top: 97%;
+        width: 39%;
+    }
+
+    .abt-h2{
+        margin-top: 12rem;
+        margin-bottom: 3rem;
+    }
+
+    .abt-us{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .abt .overlay, .abt .overlay2, .abt .overlay3{
+        font-size: 1rem;
+    }
+
+    .media > img{
+        width: 40%;
+    }
+
+}
+
+
+@media screen and (min-width:900px) {
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+        .abt .overlay,
+        .abt .overlay2,
+        .abt .overlay3 {
+            font-size: 1.3rem;
+        }
+}
